@@ -32,8 +32,8 @@ export default function DashboardPage() {
   const fetchData = useCallback(async () => {
     try {
       const [t, s, settings] = await Promise.all([
-        api.get('/topics'),
-        api.get(`/sessions?startDate=${getTodayRange()}`),
+        api.get<Topic[]>('/topics'),
+        api.get<Session[]>(`/sessions?startDate=${getTodayRange()}`),
         api.get<PomodoroSettingsType>('/settings'),
       ])
       setTopics(t)

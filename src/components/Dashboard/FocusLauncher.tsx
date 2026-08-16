@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import type { Topic } from '../../types'
 import { Play } from 'lucide-react'
-import { playEnterFocus, playHover } from '../../utils/sounds'
+import { playEnterFocus } from '../../utils/sounds'
 
 interface Props {
   topics: Topic[]

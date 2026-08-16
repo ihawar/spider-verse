@@ -1,5 +1,4 @@
 import type { AnalyticsSummary, Period } from '../../types'
-import { secondsToHM, secondsToHours } from '../../utils/formatTime'
 import { Clock, Zap, Trophy, CheckCircle2 } from 'lucide-react'
 
 const tabs: { key: Period; label: string }[] = [

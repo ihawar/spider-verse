@@ -16,7 +16,7 @@ export default function TaskList({ topic, onBack }: Props) {
 
   const fetchTasks = useCallback(async () => {
     try {
-      const data = await api.get(`/tasks?topicId=${topic.id}`)
+      const data = await api.get<Task[]>(`/tasks?topicId=${topic.id}`)
       setTasks(data)
     } catch {
       // handled

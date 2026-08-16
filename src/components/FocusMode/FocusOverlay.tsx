@@ -66,7 +66,7 @@ export default function FocusOverlay({ topic, onFinish, pomodoroSettings, initia
 
   const fetchTasks = useCallback(async () => {
     try {
-      const data = await api.get(`/tasks?topicId=${topic.id}`)
+      const data = await api.get<Task[]>(`/tasks?topicId=${topic.id}`)
       setTasks(data)
     } catch {
       // handled

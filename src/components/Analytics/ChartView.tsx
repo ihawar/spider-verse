@@ -55,7 +55,7 @@ export default function ChartView({ breakdowns }: Props) {
               boxShadow: 'none',
             }}
             labelStyle={{ color: '#71717A', fontWeight: 600 }}
-            formatter={(value: number) => [`${value}h`, '']}
+            formatter={(value) => [`${value}h`, '']}
           />
           <Legend wrapperStyle={{ fontSize: '12px', color: '#71717A' }} />
           {breakdowns.map((b, i) => (

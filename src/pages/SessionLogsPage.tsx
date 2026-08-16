@@ -23,7 +23,7 @@ export default function SessionLogsPage() {
     if (endDate) params.set('endDate', endDate)
     const qs = params.toString()
     try {
-      const data = await api.get(`/sessions${qs ? `?${qs}` : ''}`)
+      const data = await api.get<Session[]>(`/sessions${qs ? `?${qs}` : ''}`)
       setSessions(data)
     } catch {
       // handled
@@ -32,7 +32,7 @@ export default function SessionLogsPage() {
 
   useEffect(() => {
     fetchSessions()
-    topicsApi.get('/topics').then(setTopics).catch(() => {})
+    topicsApi.get<Topic[]>('/topics').then(setTopics).catch(() => {})
   }, [fetchSessions])
 
   const handleEdit = (session: Session) => setEditingSession(session)

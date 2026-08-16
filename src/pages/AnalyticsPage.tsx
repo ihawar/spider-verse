@@ -12,7 +12,7 @@ export default function AnalyticsPage() {
 
   const fetchData = useCallback(async () => {
     try {
-      const result = await api.get(`/analytics?period=${period}`)
+      const result = await api.get<Analytics>(`/analytics?period=${period}`)
       setData(result)
     } catch {
       // handled
